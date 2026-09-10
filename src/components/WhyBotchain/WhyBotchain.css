@@ -1,0 +1,239 @@
+/* Why Botchain Section */
+.why-monad {
+    padding: 160px 0;
+    background-color: var(--color-background);
+    position: relative;
+}
+
+.why-monad .container {
+    position: relative;
+}
+
+/* Vertical Grid Lines */
+/* Vertical Grid Lines */
+.why-monad::before,
+.why-monad::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.06);
+    pointer-events: none;
+}
+
+.why-monad::before {
+    left: 150px;
+}
+
+.why-monad::after {
+    right: 150px;
+}
+
+.scribble-text {
+    position: relative;
+    display: inline-block;
+    color: var(--color-primary);
+}
+
+.scribble-text::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    bottom: -15px;
+    /* Adjusted to sit lower */
+    height: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='15' viewBox='0 0 200 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 7.5C40 7.5 50 2.5 100 2.5C150 2.5 160 7.5 197 7.5' stroke='%23d4ff4f' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    transform: rotate(-1deg);
+}
+
+.section-heading {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    text-align: center;
+    margin-bottom: 48px;
+    color: var(--color-text-muted);
+}
+
+/* Speed Comparison */
+.speed-comparison {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.speed-card {
+    flex: 1;
+    max-width: 280px;
+    padding: 32px 28px;
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-card-bg);
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+}
+
+.speed-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.speed-card.monad-card {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.speed-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.speed-icon {
+    color: var(--color-text-muted);
+}
+
+.monad-card .speed-icon {
+    color: var(--color-accent);
+}
+
+.speed-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+}
+
+.monad-card .speed-label {
+    color: var(--color-accent);
+}
+
+.speed-value {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.monad-card .speed-value {
+    color: var(--color-accent);
+}
+
+/* Speed Bar Visual */
+/* Speed Visualizer */
+.speed-visualizer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+    height: 40px;
+    width: 100%;
+    margin-top: auto;
+}
+
+.visualizer-bar {
+    flex: 1;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+}
+
+/* Legacy Visualizer - Slow/Static */
+.legacy-visualizer .visualizer-bar {
+    background-color: var(--color-text-muted);
+    opacity: 0.3;
+    height: 30%;
+    animation: pulse 4s infinite ease-in-out;
+}
+
+/* Botchain Visualizer - Fast/Dynamic */
+.monad-visualizer .visualizer-bar {
+    background-color: var(--color-accent);
+    box-shadow: 0 0 10px rgba(212, 255, 79, 0.4);
+    height: 100%;
+    animation: equalizer 2s infinite ease-in-out alternate;
+}
+
+@keyframes equalizer {
+    0% {
+        height: 30%;
+        opacity: 0.7;
+    }
+
+    50% {
+        height: 100%;
+        opacity: 1;
+    }
+
+    100% {
+        height: 60%;
+        opacity: 0.8;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        height: 30%;
+    }
+
+    50% {
+        height: 40%;
+    }
+}
+
+/* Arrow */
+.speed-arrow {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    opacity: 0.5;
+}
+
+/* Tagline */
+.speed-tagline {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--color-text-muted);
+}
+
+.speed-tagline .highlight {
+    font-weight: 700;
+    color: var(--color-primary);
+    background-color: var(--color-accent);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .speed-comparison {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .speed-card {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .speed-arrow {
+        transform: rotate(90deg);
+    }
+
+    .speed-value {
+        font-size: 2.5rem;
+    }
+}
