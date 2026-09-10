@@ -7,8 +7,8 @@ import { RoleAuthModal } from './components/RoleAuthModal';
 
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { WhyBotchain } from './components/WhyBotchain';
 import { HowItWorks } from './components/HowItWorks';
+import { ProjectWorkflow } from './components/ProjectWorkflow';
 import { FeaturesGrid } from './components/FeaturesGrid';
 import { Footer } from './components/Footer';
 import { LiveEventsSection } from './components/LiveEventsSection';
@@ -63,7 +63,7 @@ function HomePage() {
           <LiveEventsSection />
         </div>
         <HowItWorks />
-        <WhyBotchain />
+        <ProjectWorkflow />
         <FeaturesGrid />
       </main>
       <Footer />
