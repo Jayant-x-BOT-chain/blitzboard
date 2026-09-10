@@ -1,0 +1,140 @@
+.event-form {
+    max-width: 600px;
+}
+
+.form-section {
+    margin-bottom: 24px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+}
+
+.required {
+    color: #ff4444;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-family: inherit;
+    border: 3px solid #000;
+    border-radius: 8px;
+    background: #fff;
+    transition: all 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    box-shadow: 4px 4px 0 #000;
+}
+
+.form-input.error,
+.form-textarea.error {
+    border-color: #ff4444;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-error {
+    color: #ff4444;
+    font-size: 13px;
+    margin: 6px 0 0 0;
+}
+
+.form-select-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.form-select-btn {
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.form-select-btn:hover {
+    background: #f5f5f5;
+}
+
+.form-select-btn.active {
+    background: #d4ff4f;
+    box-shadow: 2px 2px 0 #000;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 2px solid #e0e0e0;
+}
+
+.btn {
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    border: 3px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-outline {
+    background: #fff;
+    color: #000;
+}
+
+.btn-outline:hover:not(:disabled) {
+    background: #f5f5f5;
+}
+
+.btn-primary {
+    background: #d4ff4f;
+    color: #000;
+}
+
+.btn-primary:hover:not(:disabled) {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-2px, -2px);
+}
