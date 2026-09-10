@@ -1,0 +1,82 @@
+.profile-card {
+    background-color: var(--color-card-bg);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 32px;
+    margin-bottom: 32px;
+    box-shadow: var(--shadow-card);
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.profile-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.role-badge {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.profile-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.profile-field label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.profile-field p {
+    font-size: 1rem;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.wallet-address {
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .profile-card {
+        padding: 24px;
+    }
+
+    .profile-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .role-badge {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}

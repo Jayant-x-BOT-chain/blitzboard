@@ -1,0 +1,139 @@
+.join-event-form {
+    max-width: 400px;
+}
+
+.code-input-wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.code-input {
+    flex: 1;
+    padding: 16px 20px;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: monospace;
+    letter-spacing: 0.15em;
+    text-align: center;
+    text-transform: uppercase;
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.code-input:focus {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-2px, -2px);
+}
+
+.code-input::placeholder {
+    color: #ccc;
+    letter-spacing: 0.1em;
+}
+
+.search-btn {
+    padding: 16px 20px;
+    background: #d4ff4f;
+    border: 3px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.search-btn:hover:not(:disabled) {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-2px, -2px);
+}
+
+.search-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: #ffe5e5;
+    border: 2px solid #ff4444;
+    border-radius: 8px;
+    color: #cc0000;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.event-preview-card {
+    margin-top: 24px;
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.event-cover {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.event-details {
+    padding: 20px;
+}
+
+.event-details h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.event-description {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+}
+
+.event-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.event-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #666;
+}
+
+.already-submitted {
+    padding: 16px 20px;
+    background: #fff3cd;
+    border-top: 2px solid #000;
+    text-align: center;
+    font-weight: 600;
+    color: #856404;
+}
+
+.continue-btn {
+    width: 100%;
+    padding: 16px;
+    border-top: 3px solid #000;
+    border-radius: 0;
+    font-size: 16px;
+}
+
+.spinning {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

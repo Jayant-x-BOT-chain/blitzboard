@@ -1,0 +1,101 @@
+.submission-card {
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.submission-card:hover {
+    box-shadow: 6px 6px 0 #000;
+    transform: translate(-3px, -3px);
+}
+
+.submission-event-cover {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.submission-card-content {
+    padding: 16px;
+}
+
+.submission-event-name {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.submission-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.submission-description {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 12px 0;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.submission-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+}
+
+.submitted-date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #666;
+}
+
+.project-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #4a90d9;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+.leaderboard-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    margin-top: 12px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: inherit;
+    background: #d4ff4f;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.leaderboard-link:hover {
+    box-shadow: 3px 3px 0 #000;
+    transform: translate(-1px, -1px);
+}

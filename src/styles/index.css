@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --color-primary: #000000;
+  --color-accent: #d4ff4f;
+  --color-accent-hover: #c5f040;
+  --color-background: #fffbf5;
+  --color-background-alt: #f5f0e8;
+  --color-card-bg: #ffffff;
+  --color-text: #000000;
+  --color-text-muted: #666666;
+  --color-sun: #ff8c00;
+  --color-sun-rays: #ffa500;
+  --color-border: #000000;
+
+  /* Typography */
+  --font-display: 'Anton', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Sizes */
+  --border-radius: 16px;
+  --border-radius-sm: 8px;
+  --border-radius-lg: 24px;
+  --border-width: 2px;
+
+  /* Shadows */
+  --shadow-card: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-card-hover: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-button: 3px 3px 0px 0px rgba(0, 0, 0, 1);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--border-radius-lg);
+  transition: all var(--transition-fast);
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border: var(--border-width) solid var(--color-border);
+  box-shadow: var(--shadow-button);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.btn-primary:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: var(--border-width) solid var(--color-border);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-card-bg);
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--color-card-bg);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-fast);
+}
+
+.card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.display-text {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-text-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}

@@ -1,0 +1,115 @@
+.image-upload {
+    width: 100%;
+}
+
+.upload-zone {
+    border: 3px dashed #000;
+    border-radius: 12px;
+    padding: 48px 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fff;
+}
+
+.upload-zone:hover {
+    background: #f5f5f5;
+    border-color: #666;
+}
+
+.upload-zone.dragging {
+    background: #d4ff4f;
+    border-style: solid;
+}
+
+.upload-zone.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.upload-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    background: #d4ff4f;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-text {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.upload-hint {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+}
+
+.upload-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #e0e0e0;
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.image-preview {
+    position: relative;
+    border: 3px solid #000;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.remove-btn:hover {
+    background: #ff4444;
+    color: #fff;
+}
+
+.upload-error {
+    color: #ff4444;
+    font-size: 13px;
+    margin: 8px 0 0 0;
+}

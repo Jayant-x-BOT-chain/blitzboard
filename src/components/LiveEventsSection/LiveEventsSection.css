@@ -1,0 +1,52 @@
+.live-events-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #fffef0 0%, #fffbf5 100%);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.zap-icon {
+    color: #ff4757;
+}
+
+.section-header h2 {
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.live-count {
+    padding: 6px 12px;
+    background: #ff4757;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 20px;
+}
+
+.loading-state {
+    text-align: center;
+    padding: 40px;
+}
+
+.live-events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.spinning {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
