@@ -1,6 +1,6 @@
 import { supabase } from './supabase';
 import { createPublicClient, http, parseAbiItem } from 'viem';
-import { botchain } from './wagmi';
+import { botchainTestnet as botchain } from './wagmi';
 import { AGENT_CONSENSUS_ADDRESS } from './contract';
 
 // =====================================================

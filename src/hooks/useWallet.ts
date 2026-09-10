@@ -1,7 +1,7 @@
 import { useAccount, useDisconnect, useSwitchChain, useChainId } from 'wagmi';
 import { useConnectModal } from '@rainbow-me/rainbowkit';
 import { useState, useCallback } from 'react';
-import { TARGET_CHAIN_ID, botchain } from '../lib/wagmi';
+import { TARGET_CHAIN_ID, botchainTestnet as botchain } from '../lib/wagmi';
 
 export function useWallet() {
     const { address, isConnected, isConnecting } = useAccount();

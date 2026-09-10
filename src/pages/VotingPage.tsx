@@ -15,7 +15,7 @@ import {
     type SubmissionWithVotes,
     type VoteAllocation,
 } from '../lib/votingService';
-import { botchain } from '../lib/wagmi';
+import { botchainTestnet as botchain } from '../lib/wagmi';
 import './VotingPage.css';
 
 type PageState = 'loading' | 'voting' | 'signing' | 'confirming' | 'syncing' | 'success' | 'already_voted' | 'error';
@@ -426,13 +426,13 @@ export function VotingPage() {
                         </div>
                         {txHash && (
                             <a
-                                href={`https://scan.botchain.ai/tx/${txHash}`}
+                                href={`https://scan.bohr.life/tx/${txHash}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="tx-link"
                             >
                                 <ExternalLink size={14} />
-                                View transaction on Botchain Explorer
+                                View transaction on Explorer
                             </a>
                         )}
                         <button

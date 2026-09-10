@@ -2,7 +2,7 @@ import { supabase } from './supabase';
 import { getEventByCode, type Event } from './eventService';
 import { EVENT_FACTORY_ADDRESS, EVENT_FACTORY_ABI } from './contract';
 import { createPublicClient, http } from 'viem';
-import { botchain } from './wagmi';
+import { botchainTestnet as botchain } from './wagmi';
 
 // =====================================================
 // TYPES

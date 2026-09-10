@@ -31,7 +31,7 @@ export function SubmitEventPage() {
 
     // Wagmi hooks for contract interaction
     const { writeContract, data: txHash, isPending, error: writeError } = useWriteContract();
-    const { isSuccess: txConfirmed, isLoading: txLoading } = useWaitForTransactionReceipt({
+    const { isSuccess: txConfirmed, isLoading: txLoading, isError: txFailed } = useWaitForTransactionReceipt({
         hash: txHash,
     });
 
@@ -112,6 +112,19 @@ export function SubmitEventPage() {
 
         handleWriteError();
     }, [writeError, event]);
+
+    // Handle transaction failure on-chain
+    useEffect(() => {
+        async function handleTxFailed() {
+            if (txFailed && event) {
+                setError('Transaction failed on-chain. Check block explorer for details.');
+                await rollbackToDraft(event.id);
+                setStep('error');
+            }
+        }
+        
+        handleTxFailed();
+    }, [txFailed, event]);
 
     const handleSubmit = async () => {
         if (!event || !address) return;
@@ -208,7 +221,7 @@ export function SubmitEventPage() {
                         </span>
                         {txHash && (
                             <a
-                                href={`https://scan.botchain.ai/tx/${txHash}`}
+                                href={`https://scan.bohr.life/tx/${txHash}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="tx-link"
@@ -242,7 +255,7 @@ export function SubmitEventPage() {
 
                         {txHash && (
                             <a
-                                href={`https://scan.botchain.ai/tx/${txHash}`}
+                                href={`https://scan.bohr.life/tx/${txHash}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="tx-link success-tx"
