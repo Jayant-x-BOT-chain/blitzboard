@@ -385,7 +385,7 @@ export interface AgentVotingResult {
     error?: string;
 }
 
-const AGENT_API_URL = import.meta.env.VITE_AGENT_API_URL || 'http://localhost:3001';
+const AGENT_API_URL = (import.meta.env.VITE_AGENT_API_URL || 'http://localhost:3001').replace(/\/$/, '');
 
 /**
  * Check if the agent API server is running

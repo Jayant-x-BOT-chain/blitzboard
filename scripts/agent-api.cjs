@@ -532,6 +532,9 @@ function sendJSON(res, statusCode, data) {
 }
 
 const server = http.createServer(async (req, res) => {
+    // Normalize URL to handle trailing or double slashes
+    const normalizedUrl = (req.url || "/").replace(/\/+/g, '/').replace(/\/$/, '') || "/";
+
     // CORS preflight
     if (req.method === "OPTIONS") {
         res.writeHead(204, {
@@ -544,7 +547,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     // Health check
-    if (req.method === "GET" && req.url === "/api/health") {
+    if (req.method === "GET" && normalizedUrl === "/api/health") {
         sendJSON(res, 200, {
             status: "ok",
             openrouter: !!OPENROUTER_API_KEY,
@@ -556,7 +559,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     // Agent voting trigger
-    const voteMatch = req.url?.match(/^\/api\/agent-vote\/(.+)$/);
+    const voteMatch = normalizedUrl.match(/^\/api\/agent-vote\/(.+)$/);
     if (req.method === "POST" && voteMatch) {
         const eventId = decodeURIComponent(voteMatch[1]);
 
