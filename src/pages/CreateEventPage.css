@@ -1,0 +1,53 @@
+.create-event-page {
+    min-height: 100vh;
+    background: #fffbf5;
+    padding: 140px 0 60px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 24px;
+}
+
+.back-btn:hover {
+    background: #f5f5f5;
+}
+
+.page-header {
+    margin-bottom: 32px;
+}
+
+.page-header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px 0;
+}
+
+.page-header p {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+}
+
+.error-banner {
+    background: #ffebeb;
+    border: 2px solid #ff4444;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+    color: #cc0000;
+    font-weight: 500;
+}

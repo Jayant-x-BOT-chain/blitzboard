@@ -1,0 +1,250 @@
+.voter-dashboard {
+    min-height: 100vh;
+    background: #fffbf5;
+    padding: 140px 0 60px;
+}
+
+/* Profile Section */
+.profile-section {
+    margin-bottom: 48px;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 12px;
+}
+
+.profile-avatar {
+    width: 64px;
+    height: 64px;
+    background: #e8e8e8;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-info h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.role-badge.voter {
+    background: #9b5de5;
+    color: #fff;
+    border-color: #9b5de5;
+}
+
+/* Join Section */
+.join-section {
+    margin-bottom: 48px;
+    padding: 32px;
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 12px;
+}
+
+.join-section h2 {
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+}
+
+.join-section>p {
+    color: #666;
+    margin: 0 0 24px 0;
+}
+
+/* Events Sections */
+.events-section {
+    margin-bottom: 48px;
+}
+
+.events-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 24px 0;
+}
+
+.loading-state {
+    text-align: center;
+    padding: 32px;
+}
+
+.empty-state {
+    padding: 32px;
+    background: #fff;
+    border: 3px dashed #ccc;
+    border-radius: 12px;
+    text-align: center;
+    color: #666;
+}
+
+.empty-state p {
+    margin: 0;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.events-grid.completed {
+    opacity: 0.8;
+}
+
+/* Event Voting Card */
+.event-voting-card {
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.event-voting-card:hover {
+    box-shadow: 6px 6px 0 #000;
+    transform: translate(-2px, -2px);
+}
+
+.event-voting-card.completed {
+    opacity: 0.7;
+}
+
+.event-voting-card.completed:hover {
+    box-shadow: none;
+    transform: none;
+}
+
+.event-voting-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.event-voting-content {
+    padding: 16px;
+}
+
+.event-voting-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+
+.credits-display {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.credits-display .credits {
+    font-size: 32px;
+    font-weight: 800;
+    color: #9b5de5;
+}
+
+.credits-display .label {
+    font-size: 14px;
+    color: #666;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    border: 3px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: #9b5de5;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-2px, -2px);
+}
+
+.voted-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: #d4ff4f;
+    border: 2px solid #000;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.voted-date {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+}
+
+.btn-secondary {
+    background: #d4ff4f;
+    color: #000;
+}
+
+.btn-secondary:hover {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-2px, -2px);
+}
+
+.btn-sm {
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+.event-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.spinning {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

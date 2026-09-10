@@ -1,0 +1,486 @@
+.voting-page {
+    min-height: 100vh;
+    background: #fffbf5;
+    padding: 140px 0 60px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 24px;
+}
+
+.back-btn:hover {
+    background: #f5f5f5;
+}
+
+.voting-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.voting-header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+}
+
+.voting-header p {
+    color: #666;
+    margin: 0;
+}
+
+.voting-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.voting-loading,
+.voting-success,
+.voting-error,
+.voting-already {
+    text-align: center;
+    padding: 60px 20px;
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 12px;
+}
+
+.voting-loading p {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 16px 0 0 0;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: #d4ff4f;
+    border: 3px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+}
+
+.voting-success h2,
+.voting-error h2,
+.voting-already h2 {
+    font-size: 28px;
+    margin: 0 0 12px 0;
+}
+
+.voting-success p,
+.voting-error p,
+.voting-already p {
+    color: #666;
+    margin: 0 0 24px 0;
+}
+
+.votes-summary {
+    padding: 16px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.voting-error svg,
+.voting-already svg {
+    color: #f5a623;
+    margin-bottom: 16px;
+}
+
+/* Credit Tracker */
+.credit-tracker {
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.credit-bar {
+    height: 24px;
+    background: #e0e0e0;
+    border: 2px solid #000;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.credit-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #d4ff4f, #98ff98);
+    transition: width 0.3s ease;
+}
+
+.credit-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.credits-used {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #333;
+}
+
+.credits-remaining {
+    color: #666;
+}
+
+/* Submissions List */
+.no-submissions {
+    text-align: center;
+    padding: 48px;
+    background: #fff;
+    border: 3px dashed #ccc;
+    border-radius: 12px;
+}
+
+.submissions-voting-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.voting-submission {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.voting-submission:hover {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-2px, -2px);
+}
+
+.submission-info {
+    flex: 1;
+}
+
+.submission-info h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+}
+
+.submission-info p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.vote-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.vote-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    font-weight: 600;
+    background: #d4ff4f;
+    border: 3px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vote-btn:hover:not(:disabled) {
+    box-shadow: 2px 2px 0 #000;
+    transform: translate(-1px, -1px);
+}
+
+.vote-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.vote-display {
+    text-align: center;
+    min-width: 80px;
+}
+
+.vote-count {
+    display: block;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.vote-cost {
+    display: block;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Error Message */
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: #ffe5e5;
+    border: 2px solid #ff4444;
+    border-radius: 8px;
+    color: #cc0000;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+/* Actions */
+.voting-actions {
+    text-align: center;
+}
+
+.btn {
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    border: 3px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: #d4ff4f;
+    color: #000;
+}
+
+.btn-primary:hover:not(:disabled) {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-2px, -2px);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-large {
+    padding: 18px 48px;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.voting-note {
+    font-size: 13px;
+    color: #666;
+    margin: 16px 0 0 0;
+}
+
+.spinning {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Wallet Notice */
+.wallet-notice {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: #eef6ff;
+    border: 2px solid #4a90d9;
+    border-radius: 8px;
+    color: #2a6cb0;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.wallet-notice.warning {
+    background: #fff8e5;
+    border-color: #e6a817;
+    color: #9a6f00;
+}
+
+/* Transaction Step Flow */
+.txn-step-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.txn-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 0;
+    position: relative;
+}
+
+.txn-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 64px;
+    bottom: 0;
+    width: 2px;
+    background: #e0e0e0;
+}
+
+.txn-step.done:not(:last-child)::after {
+    background: #22c55e;
+}
+
+.txn-step.active:not(:last-child)::after {
+    background: linear-gradient(to bottom, #d4ff4f 0%, #e0e0e0 100%);
+}
+
+.txn-step-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: #f0f0f0;
+    color: #999;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.txn-step.active .txn-step-icon {
+    background: #d4ff4f;
+    color: #000;
+    border-color: #000;
+    box-shadow: 0 0 0 4px rgba(212, 255, 79, 0.3);
+}
+
+.txn-step.active .txn-step-icon.signing {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.txn-step.active .txn-step-icon.confirming {
+    background: #fff;
+    border-color: #000;
+}
+
+.txn-step.done .txn-step-icon {
+    background: #22c55e;
+    color: #fff;
+    border-color: #16a34a;
+}
+
+.txn-step.pending .txn-step-icon {
+    background: #f5f5f5;
+    color: #ccc;
+    border-color: #e0e0e0;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(212, 255, 79, 0.3); }
+    50% { box-shadow: 0 0 0 8px rgba(212, 255, 79, 0.15); }
+}
+
+.txn-step-info h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 2px 0;
+    color: #000;
+}
+
+.txn-step.pending .txn-step-info h3 {
+    color: #999;
+}
+
+.txn-step-info p {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+}
+
+.txn-step.pending .txn-step-info p {
+    color: #bbb;
+}
+
+/* Transaction Link */
+.tx-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4a90d9;
+    background: #eef6ff;
+    border: 2px solid #4a90d9;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: all 0.2s ease;
+}
+
+.tx-link:hover {
+    background: #dceeff;
+    box-shadow: 2px 2px 0 rgba(74, 144, 217, 0.3);
+}
+
+/* Votes Summary Enhanced */
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.summary-row:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+.summary-row span:first-child {
+    font-size: 14px;
+    color: #666;
+}
+
+.summary-value {
+    font-size: 18px;
+    font-weight: 800;
+    color: #000;
+}
