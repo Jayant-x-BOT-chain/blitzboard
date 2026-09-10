@@ -1,6 +1,6 @@
 // AgentConsensus Contract ABI and Address
-// Deployed to Botchain
-export const AGENT_CONSENSUS_ADDRESS = "0x97cB6DdA7C05ca1216FFB0303B6851D692E3ec0E";
+// Deployed to Botchain Testnet
+export const AGENT_CONSENSUS_ADDRESS = "0x31b9040F37AFBDA93cE3a18eD28B4B1E1DB7E927";
 
 export const AGENT_CONSENSUS_ABI = [
     // Event Registry

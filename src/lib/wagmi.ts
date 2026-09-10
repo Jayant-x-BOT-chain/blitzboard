@@ -13,59 +13,59 @@ export const botchainTestnet = defineChain({
   },
   rpcUrls: {
     default: {
-      http: ['https://testnet-rpc.botchain.ai'],
+      http: ['https://rpc.bohr.life'],
     },
     public: {
-      http: ['https://testnet-rpc.botchain.ai'],
+      http: ['https://rpc.bohr.life'],
     },
   },
   blockExplorers: {
     default: {
       name: 'Botchain Testnet Explorer',
-      url: 'https://testnet-scan.botchain.ai',
+      url: 'https://scan.bohr.life',
     },
   },
   testnet: true,
 });
 
 // Define Botchain chain
-export const botchain = defineChain({
-  id: 677, 
-  name: 'Botchain',
-  nativeCurrency: {
-    decimals: 18,
-    name: 'Botchain',
-    symbol: 'BOT',
-  },
-  rpcUrls: {
-    default: {
-      http: ['https://rpc.botchain.ai'],
-    },
-    public: {
-      http: ['https://rpc.botchain.ai'],
-    },
-  },
-  blockExplorers: {
-    default: {
-      name: 'Botchain Explorer',
-      url: 'https://scan.botchain.ai',
-    },
-  },
-  testnet: false,
-});
+// export const botchain = defineChain({
+//   id: 677, 
+//   name: 'Botchain',
+//   nativeCurrency: {
+//     decimals: 18,
+//     name: 'Botchain',
+//     symbol: 'BOT',
+//   },
+//   rpcUrls: {
+//     default: {
+//       http: ['https://rpc.botchain.ai'],
+//     },
+//     public: {
+//       http: ['https://rpc.botchain.ai'],
+//     },
+//   },
+//   blockExplorers: {
+//     default: {
+//       name: 'Botchain Explorer',
+//       url: 'https://scan.botchain.ai',
+//     },
+//   },
+//   testnet: false,
+// });
 
 // Configure wagmi with RainbowKit
 export const config = getDefaultConfig({
   appName: 'BlitzBoard',
   projectId: import.meta.env.VITE_WALLETCONNECT_PROJECT_ID || 'development',
-  chains: [botchainTestnet, botchain, mainnet, sepolia],
+  chains: [botchainTestnet, mainnet, sepolia], // Removed botchain mainnet for now
   ssr: false,
 });
 
 // Export chain configurations for easy access
 export const supportedChains = {
   botchainTestnet,
-  botchain,
+  // botchain,
   mainnet,
   sepolia,
 };
