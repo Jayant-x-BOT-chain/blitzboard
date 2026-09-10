@@ -10,12 +10,12 @@ const fs = require("fs");
 const path = require("path");
 
 // Config
-const RPC_URL = "https://testnet-rpc.monad.xyz";
+const RPC_URL = "https://rpc.bohr.life";
 const CONTRACT_ADDRESS = "0xc410352706ac0Ae9eB670afda875E602c83bFce0";
 const NUM_TEST_AGENTS = 5; // Small number for quick test
-const FUND_AMOUNT = "0.02"; // MON per agent
+const FUND_AMOUNT = "0.02"; // BOT per agent
 
-const EVENT_ID = "23f706ce-ccbf-4fa7-b779-fc493416a151"; // monad blitz
+const EVENT_ID = "23f706ce-ccbf-4fa7-b779-fc493416a151"; // botchain blitz
 const EVENT_CODE = "JZVRBKGQ";
 
 const supabase = createClient(
@@ -206,7 +206,7 @@ async function step4_fundWallets(wallets, deployerWallet, provider) {
 
     // Fund wallets sequentially (nonce management)
     let nonce = await provider.getTransactionCount(deployerWallet.address);
-    console.log(`Deployer nonce: ${nonce}, funding ${FUND_AMOUNT} MON each...`);
+    console.log(`Deployer nonce: ${nonce}, funding ${FUND_AMOUNT} BOT each...`);
 
     const txPromises = [];
     for (const w of needsFunding) {
@@ -352,14 +352,14 @@ async function step6_verify(provider, submissions) {
 async function main() {
     console.log("🧪 FULL AGENT VOTING TEST");
     console.log("Contract:", CONTRACT_ADDRESS);
-    console.log("Event:", EVENT_ID, "(monad blitz)");
+    console.log("Event:", EVENT_ID, "(botchain blitz)");
 
     const provider = new ethers.JsonRpcProvider(RPC_URL);
     const deployerWallet = new ethers.Wallet(process.env.WALLET_PRIVATE_KEY, provider);
     console.log("Deployer:", deployerWallet.address);
 
     const deployerBal = await provider.getBalance(deployerWallet.address);
-    console.log("Balance:", ethers.formatEther(deployerBal), "MON");
+    console.log("Balance:", ethers.formatEther(deployerBal), "BOT");
 
     // Get submissions from Supabase
     const { data: submissions } = await supabase

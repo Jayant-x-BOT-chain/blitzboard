@@ -1,4 +1,4 @@
-// Agent voting runner - parallel execution on Monad
+// Agent voting runner - parallel execution on Botchain
 // Run with: node scripts/agent-runner.cjs <eventId>
 // Or test mode: node scripts/agent-runner.cjs --test
 
@@ -9,7 +9,7 @@ const path = require("path");
 const { createClient } = require("@supabase/supabase-js");
 
 // Configuration
-const RPC_URL = "https://testnet-rpc.monad.xyz";
+const RPC_URL = "https://rpc.bohr.life";
 const CONTRACT_ADDRESS = "0xc410352706ac0Ae9eB670afda875E602c83bFce0";
 
 // Supabase client for reading submissions & registering wallets
@@ -95,7 +95,7 @@ async function runAgentVoting(eventId, submissions) {
     // Register wallets in Supabase agent_wallets table
     await ensureWalletsRegistered(wallets);
 
-    // Connect to Monad
+    // Connect to Botchain
     const provider = new ethers.JsonRpcProvider(RPC_URL);
     const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, provider);
 

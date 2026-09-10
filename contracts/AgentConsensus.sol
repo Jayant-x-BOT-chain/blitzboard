@@ -3,7 +3,7 @@ pragma solidity ^0.8.24;
 
 /**
  * @title AgentConsensus
- * @notice Parallel-execution voting contract for AI agent consensus on Monad.
+ * @notice Parallel-execution voting contract for AI agent consensus on Botchain.
  *         Uses sharded state to enable concurrent writes without conflicts.
  */
 contract AgentConsensus {

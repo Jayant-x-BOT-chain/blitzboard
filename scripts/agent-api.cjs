@@ -21,7 +21,7 @@ const { createClient } = require("@supabase/supabase-js");
 // =====================================================
 const PORT = process.env.PORT || process.env.AGENT_API_PORT || 3001;
 const HOST = '0.0.0.0'; // Bind to all interfaces (required for Render/cloud)
-const RPC_URL = "https://testnet-rpc.monad.xyz";
+const RPC_URL = "https://rpc.bohr.life";
 const CONTRACT_ADDRESS = "0xc410352706ac0Ae9eB670afda875E602c83bFce0";
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || "";
 const OPENROUTER_MODEL = "meta-llama/llama-3.3-70b-instruct:free";
@@ -305,7 +305,7 @@ async function ensureWalletsFunded(wallets, provider) {
 
     const deployer = new ethers.Wallet(deployerKey, provider);
     const deployerBalance = await provider.getBalance(deployer.address);
-    console.log(`💰 Deployer balance: ${ethers.formatEther(deployerBalance)} MON`);
+    console.log(`💰 Deployer balance: ${ethers.formatEther(deployerBalance)} BOT`);
 
     for (const w of wallets) {
         const balance = await provider.getBalance(w.address);
@@ -318,7 +318,7 @@ async function ensureWalletsFunded(wallets, provider) {
                     gasLimit: 21000,
                 });
                 await tx.wait();
-                console.log(`   ✅ Funded with 0.1 MON`);
+                console.log(`   ✅ Funded with 0.1 BOT`);
             } catch (err) {
                 console.error(`   ❌ Funding failed: ${err.message?.slice(0, 80)}`);
             }
@@ -419,7 +419,7 @@ async function runAgentVotingPipeline(eventId, agentCount = 5) {
     const provider = new ethers.JsonRpcProvider(RPC_URL);
 
     await ensureWalletsRegistered(wallets);
-    // Skip funding — wallets are pre-funded with 0.5 MON via fund-all-wallets.cjs
+    // Skip funding — wallets are pre-funded with 0.5 BOT via fund-all-wallets.cjs
 
     // 4. Parallel on-chain voting
     console.log("\n⛓️  Step 4: On-chain voting (parallel)...");

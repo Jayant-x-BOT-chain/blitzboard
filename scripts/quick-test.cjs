@@ -5,7 +5,7 @@ require("dotenv").config();
 const { ethers } = require("ethers");
 const { createClient } = require("@supabase/supabase-js");
 
-const RPC_URL = "https://testnet-rpc.monad.xyz";
+const RPC_URL = "https://rpc.bohr.life";
 const CONTRACT_ADDRESS = "0xc410352706ac0Ae9eB670afda875E602c83bFce0";
 const FUNDER_PRIVATE_KEY = process.env.VITE_WALLET_PRIVATE_KEY;
 const SUPABASE_URL = process.env.VITE_SUPABASE_URL;

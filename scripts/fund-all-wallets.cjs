@@ -1,4 +1,4 @@
-// Batch-fund all agent wallets with 0.5 MON each
+// Batch-fund all agent wallets with 0.5 BOT each
 // Run with: node scripts/fund-all-wallets.cjs
 
 require("dotenv").config();
@@ -6,8 +6,8 @@ const { ethers } = require("ethers");
 const fs = require("fs");
 const path = require("path");
 
-const RPC_URL = "https://testnet-rpc.monad.xyz";
-const FUND_AMOUNT = "0.5"; // MON per wallet
+const RPC_URL = "https://rpc.bohr.life";
+const FUND_AMOUNT = "0.5"; // BOT per wallet
 
 async function main() {
     const walletsPath = path.join(__dirname, "agent-wallets.json");
@@ -27,11 +27,13 @@ async function main() {
 
     const deployer = new ethers.Wallet(deployerKey, provider);
     const balance = await provider.getBalance(deployer.address);
+    const network = await provider.getNetwork();
     console.log(`💰 Deployer: ${deployer.address}`);
-    console.log(`💰 Balance:  ${ethers.formatEther(balance)} MON`);
+    console.log(`💰 Balance:  ${ethers.formatEther(balance)} BOT`);
+    console.log(`📡 Network:  ${network.name} (${network.chainId})`);
     console.log(`📋 Wallets:  ${wallets.length}`);
-    console.log(`💸 Funding:  ${FUND_AMOUNT} MON each`);
-    console.log(`💰 Total:    ${wallets.length * parseFloat(FUND_AMOUNT)} MON needed\n`);
+    console.log(`💸 Funding:  ${FUND_AMOUNT} BOT each`);
+    console.log(`💰 Total:    ${wallets.length * parseFloat(FUND_AMOUNT)} BOT needed\n`);
 
     const fundAmount = ethers.parseEther(FUND_AMOUNT);
     const minBalance = ethers.parseEther("0.45"); // skip if already has ≥0.45
@@ -45,7 +47,7 @@ async function main() {
         const bal = await provider.getBalance(w.address);
 
         if (bal >= minBalance) {
-            console.log(`⏭️  [${i + 1}/${wallets.length}] ${w.address.slice(0, 12)}... already has ${ethers.formatEther(bal)} MON`);
+            console.log(`⏭️  [${i + 1}/${wallets.length}] ${w.address.slice(0, 12)}... already has ${ethers.formatEther(bal)} BOT`);
             skipped++;
             continue;
         }
@@ -58,7 +60,7 @@ async function main() {
             });
             await tx.wait();
             funded++;
-            console.log(`✅ [${i + 1}/${wallets.length}] ${w.address.slice(0, 12)}... funded with ${FUND_AMOUNT} MON`);
+            console.log(`✅ [${i + 1}/${wallets.length}] ${w.address.slice(0, 12)}... funded with ${FUND_AMOUNT} BOT`);
         } catch (err) {
             failed++;
             console.error(`❌ [${i + 1}/${wallets.length}] ${w.address.slice(0, 12)}... FAILED: ${err.message?.slice(0, 60)}`);
@@ -67,12 +69,12 @@ async function main() {
 
     console.log("\n" + "=".repeat(50));
     console.log(`✅ Funded:  ${funded}`);
-    console.log(`⏭️  Skipped: ${skipped} (already had ≥0.45 MON)`);
+    console.log(`⏭️  Skipped: ${skipped} (already had ≥0.45 BOT)`);
     console.log(`❌ Failed:  ${failed}`);
     console.log("=".repeat(50));
 
     const finalBalance = await provider.getBalance(deployer.address);
-    console.log(`\n💰 Deployer remaining: ${ethers.formatEther(finalBalance)} MON`);
+    console.log(`\n💰 Deployer remaining: ${ethers.formatEther(finalBalance)} BOT`);
 }
 
 main().catch(console.error);

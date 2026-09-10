@@ -67,12 +67,12 @@ async function main() {
     console.log("=".repeat(50));
     wallets.forEach(w => console.log(w.address));
 
-    console.log("\n💡 To fund these wallets on Monad testnet:");
-    console.log("   1. Use the Monad faucet for each address");
+    console.log("\n💡 To fund these wallets on Botchain testnet:");
+    console.log("   1. Use the Botchain faucet for each address");
     console.log("   2. Or run the batch-fund script with a funded wallet");
 
-    // Calculate total MON needed (estimate 0.01 MON per agent for gas)
-    console.log(`\n💰 Estimated funding needed: ${NUM_AGENTS * 0.01} MON`);
+    // Calculate total BOT needed (estimate 0.01 BOT per agent for gas)
+    console.log(`\n💰 Estimated funding needed: ${NUM_AGENTS * 0.01} BOT`);
 }
 
 main().catch(console.error);

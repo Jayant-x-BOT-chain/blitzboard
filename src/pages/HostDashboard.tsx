@@ -131,7 +131,7 @@ export function HostDashboard() {
                                                         <span className="agent-count-display">{agentCount[event.id] || 5}</span>
                                                     </div>
                                                     <div className="agent-picker-info">
-                                                        ~{((agentCount[event.id] || 5) * 0.1).toFixed(1)} MON needed for gas
+                                                        ~{((agentCount[event.id] || 5) * 0.1).toFixed(1)} BOT needed for gas
                                                     </div>
                                                     <div className="agent-picker-actions">
                                                         <button

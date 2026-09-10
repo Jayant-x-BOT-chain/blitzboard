@@ -9,7 +9,7 @@ const { createClient } = require("@supabase/supabase-js");
 // CONFIGURATION
 // ==========================================
 
-const RPC_URL = "https://testnet-rpc.monad.xyz";
+const RPC_URL = "https://rpc.bohr.life";
 const CONTRACT_ADDRESS = "0xc410352706ac0Ae9eB670afda875E602c83bFce0";
 const FUNDER_PRIVATE_KEY = process.env.VITE_WALLET_PRIVATE_KEY;
 const SUPABASE_URL = process.env.VITE_SUPABASE_URL;
@@ -18,7 +18,7 @@ const SUPABASE_KEY = process.env.VITE_SUPABASE_ANON_KEY;
 // Number of agents to test with
 const NUM_AGENTS = 10; // Start small, can increase
 
-// Amount to fund each agent (in MON)
+// Amount to fund each agent (in BOT)
 const FUND_AMOUNT = "0.01";
 
 // Contract ABI (minimal)
@@ -119,7 +119,7 @@ async function generateAndFundAgents(provider, numAgents) {
     const funderWallet = new ethers.Wallet(FUNDER_PRIVATE_KEY, provider);
     const funderBalance = await provider.getBalance(funderWallet.address);
     console.log(`💳 Funder: ${funderWallet.address}`);
-    console.log(`💰 Funder balance: ${ethers.formatEther(funderBalance)} MON\n`);
+    console.log(`💰 Funder balance: ${ethers.formatEther(funderBalance)} BOT\n`);
 
     const agents = [];
     const fundAmount = ethers.parseEther(FUND_AMOUNT);
@@ -135,7 +135,7 @@ async function generateAndFundAgents(provider, numAgents) {
                 value: fundAmount
             });
             await tx.wait();
-            console.log(`   ✅ Agent ${i + 1}: ${wallet.address} funded with ${FUND_AMOUNT} MON`);
+            console.log(`   ✅ Agent ${i + 1}: ${wallet.address} funded with ${FUND_AMOUNT} BOT`);
             agents.push(wallet);
         } catch (err) {
             console.log(`   ❌ Agent ${i + 1}: Funding failed - ${err.message?.slice(0, 50)}`);
