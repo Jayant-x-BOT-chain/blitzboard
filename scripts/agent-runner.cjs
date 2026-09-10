@@ -10,7 +10,7 @@ const { createClient } = require("@supabase/supabase-js");
 
 // Configuration
 const RPC_URL = "https://rpc.bohr.life";
-const CONTRACT_ADDRESS = "0xc410352706ac0Ae9eB670afda875E602c83bFce0";
+const CONTRACT_ADDRESS = "0x31b9040F37AFBDA93cE3a18eD28B4B1E1DB7E927";
 
 // Supabase client for reading submissions & registering wallets
 const SUPABASE_URL = process.env.VITE_SUPABASE_URL;

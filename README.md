@@ -71,7 +71,7 @@ npm install
 3. **Configure environment variables**
 Create a `.env` file in the root directory:
 ```env
-# Supabase
+# Supabase Configuration
 VITE_SUPABASE_URL=your_supabase_url
 VITE_SUPABASE_ANON_KEY=your_supabase_key
 
@@ -79,19 +79,26 @@ VITE_SUPABASE_ANON_KEY=your_supabase_key
 VITE_PRIVY_APP_ID=your_privy_app_id
 PRIVY_APP_SECRET=your_privy_secret
 
-# Contract Address (Botchain)
-VITE_CONTRACT_ADDRESS=your_deployed_contract_address
+# WalletConnect
+VITE_WALLETCONNECT_PROJECT_ID=
 
-# Wallet Private Key
-WALLET_PRIVATE_KEY=your_private_key
+# Network & Contract Configuration
+# Set to 968 for Testnet, or the mainnet Chain ID
+VITE_TARGET_CHAIN_ID=968
+VITE_CONTRACT_ADDRESS=0x31b9040F37AFBDA93cE3a18eD28B4B1E1DB7E927
 
-# Agent API (optional)
+# AI Agent API Setup
+OPENROUTER_API_KEY=
 VITE_AGENT_API_URL=http://localhost:3001
+
+# Deployer/Agent Wallet (For Hardhat and API Funding)
+WALLET_PRIVATE_KEY=your_private_key
 ```
 
 4. **Deploy Smart Contract** (if not already deployed)
 ```bash
-npx hardhat run scripts/deploy.cjs --network botchain
+npx hardhat run scripts/deploy.cjs --network botchainTestnet
+# Or for mainnet: npx hardhat run scripts/deploy.cjs --network botchain
 ```
 
 ## 🚀 Running the Application

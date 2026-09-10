@@ -28,47 +28,47 @@ export const botchainTestnet = defineChain({
   testnet: true,
 });
 
-// Define Botchain chain
-// export const botchain = defineChain({
-//   id: 677, 
-//   name: 'Botchain',
-//   nativeCurrency: {
-//     decimals: 18,
-//     name: 'Botchain',
-//     symbol: 'BOT',
-//   },
-//   rpcUrls: {
-//     default: {
-//       http: ['https://rpc.botchain.ai'],
-//     },
-//     public: {
-//       http: ['https://rpc.botchain.ai'],
-//     },
-//   },
-//   blockExplorers: {
-//     default: {
-//       name: 'Botchain Explorer',
-//       url: 'https://scan.botchain.ai',
-//     },
-//   },
-//   testnet: false,
-// });
+// Define Botchain chain (Mainnet)
+export const botchain = defineChain({
+  id: 677, 
+  name: 'Botchain',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Botchain',
+    symbol: 'BOT',
+  },
+  rpcUrls: {
+    default: {
+      http: ['https://rpc.botchain.ai'],
+    },
+    public: {
+      http: ['https://rpc.botchain.ai'],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: 'Botchain Explorer',
+      url: 'https://scan.botchain.ai',
+    },
+  },
+  testnet: false,
+});
 
 // Configure wagmi with RainbowKit
 export const config = getDefaultConfig({
   appName: 'BlitzBoard',
   projectId: import.meta.env.VITE_WALLETCONNECT_PROJECT_ID || 'development',
-  chains: [botchainTestnet, mainnet, sepolia], // Removed botchain mainnet for now
+  chains: [botchainTestnet, botchain, mainnet, sepolia],
   ssr: false,
 });
 
 // Export chain configurations for easy access
 export const supportedChains = {
   botchainTestnet,
-  // botchain,
+  botchain,
   mainnet,
   sepolia,
 };
 
-// Target chain for the app (Testnet for now, ready for mainnet)
-export const TARGET_CHAIN_ID = botchainTestnet.id;
+// Target chain for the app (configurable via env, defaults to Testnet)
+export const TARGET_CHAIN_ID = Number(import.meta.env.VITE_TARGET_CHAIN_ID) || botchainTestnet.id;

@@ -18,11 +18,11 @@ module.exports = {
         },
     },
     networks: {
-        // botchain: {
-        //     url: "https://rpc.botchain.ai",
-        //     chainId: 677,
-        //     accounts: PRIVATE_KEY ? [`0x${PRIVATE_KEY}`] : [],
-        // },
+        botchain: {
+            url: "https://rpc.botchain.ai", // Replace with correct mainnet RPC if different
+            chainId: 677, // Verify actual mainnet chainId
+            accounts: PRIVATE_KEY ? [`0x${PRIVATE_KEY}`] : [],
+        },
         botchainTestnet: {
             url: "https://rpc.bohr.life",
             chainId: 968,

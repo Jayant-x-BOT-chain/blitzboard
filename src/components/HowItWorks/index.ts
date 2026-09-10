@@ -1,1 +1,1 @@
-export * from './HowItWorks';
+export { HowItWorks } from './HowItWorks';

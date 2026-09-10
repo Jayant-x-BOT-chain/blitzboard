@@ -11,7 +11,7 @@ const path = require("path");
 
 // Config
 const RPC_URL = "https://rpc.bohr.life";
-const CONTRACT_ADDRESS = "0xc410352706ac0Ae9eB670afda875E602c83bFce0";
+const CONTRACT_ADDRESS = "0x31b9040F37AFBDA93cE3a18eD28B4B1E1DB7E927";
 const NUM_TEST_AGENTS = 5; // Small number for quick test
 const FUND_AMOUNT = "0.02"; // BOT per agent
 

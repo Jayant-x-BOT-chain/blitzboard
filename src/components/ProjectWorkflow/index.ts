@@ -1,1 +1,1 @@
-export * from './ProjectWorkflow';
+export { ProjectWorkflow } from './ProjectWorkflow';
