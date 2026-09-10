@@ -41,7 +41,7 @@ export function Hero({ onViewLeaderboards }: HeroProps) {
             <div className="container hero-container">
                 <div className="hero-content">
                     <h1 className="hero-title display-text">
-                        LIVE JUDGING AT BLITZ SPEED ON MONAD
+                        LIVE JUDGING AT BLITZ SPEED ON BOTCHAIN
                     </h1>
 
                     <p className="hero-subtitle">

@@ -3,7 +3,7 @@ import './WhyBotchain.css';
 
 export function WhyBotchain() {
     return (
-        <section className="why-monad">
+        <section className="why-botchain">
             <div className="container">
                 <h2 className="section-heading">
                     <span className="scribble-text">Why Botchain?</span>
@@ -30,13 +30,13 @@ export function WhyBotchain() {
                     </div>
 
                     {/* Botchain Side */}
-                    <div className="speed-card monad-card">
+                    <div className="speed-card botchain-card">
                         <div className="speed-header">
                             <Zap className="speed-icon" size={24} strokeWidth={2.5} />
                             <span className="speed-label">Botchain</span>
                         </div>
                         <div className="speed-value">&lt;1s</div>
-                        <div className="speed-visualizer monad-visualizer">
+                        <div className="speed-visualizer botchain-visualizer">
                             {[...Array(10)].map((_, i) => (
                                 <span key={i} className="visualizer-bar" style={{ animationDelay: `${i * 0.05}s` }}></span>
                             ))}

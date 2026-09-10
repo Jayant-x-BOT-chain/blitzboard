@@ -1,18 +1,18 @@
 /* Why Botchain Section */
-.why-monad {
+.why-botchain {
     padding: 160px 0;
     background-color: var(--color-background);
     position: relative;
 }
 
-.why-monad .container {
+.why-botchain .container {
     position: relative;
 }
 
 /* Vertical Grid Lines */
 /* Vertical Grid Lines */
-.why-monad::before,
-.why-monad::after {
+.why-botchain::before,
+.why-botchain::after {
     content: '';
     position: absolute;
     top: 0;
@@ -22,11 +22,11 @@
     pointer-events: none;
 }
 
-.why-monad::before {
+.why-botchain::before {
     left: 150px;
 }
 
-.why-monad::after {
+.why-botchain::after {
     right: 150px;
 }
 
@@ -87,7 +87,7 @@
     box-shadow: var(--shadow-card-hover);
 }
 
-.speed-card.monad-card {
+.speed-card.botchain-card {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
 }
@@ -103,7 +103,7 @@
     color: var(--color-text-muted);
 }
 
-.monad-card .speed-icon {
+.botchain-card .speed-icon {
     color: var(--color-accent);
 }
 
@@ -115,7 +115,7 @@
     color: var(--color-text-muted);
 }
 
-.monad-card .speed-label {
+.botchain-card .speed-label {
     color: var(--color-accent);
 }
 
@@ -127,7 +127,7 @@
     color: var(--color-primary);
 }
 
-.monad-card .speed-value {
+.botchain-card .speed-value {
     color: var(--color-accent);
 }
 
@@ -158,7 +158,7 @@
 }
 
 /* Botchain Visualizer - Fast/Dynamic */
-.monad-visualizer .visualizer-bar {
+.botchain-visualizer .visualizer-bar {
     background-color: var(--color-accent);
     box-shadow: 0 0 10px rgba(212, 255, 79, 0.4);
     height: 100%;

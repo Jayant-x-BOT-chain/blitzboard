@@ -26,7 +26,7 @@ export function Footer() {
 
             <div className="footer-bottom">
                 <p className="footer-copyright">
-                    Built during Road to Blitz Nagpur
+                    Built for the Botchain Ecosystem
                 </p>
             </div>
         </footer>

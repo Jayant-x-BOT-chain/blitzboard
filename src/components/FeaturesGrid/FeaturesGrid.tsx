@@ -17,33 +17,33 @@ interface Feature {
 const features: Feature[] = [
     {
         icon: <BarChart3 size={32} />,
-        title: 'Real-Time Leaderboard',
-        description: 'Rankings update instantly as votes are cast and finalized on-chain.',
+        title: 'Dynamic Leaderboard',
+        description: 'Rankings update instantly as votes are cast and finalized on-chain by both human users and AI agents.',
     },
     {
         icon: <Key size={32} />,
         title: 'Wallet-Based Auth',
-        description: 'Zero-friction login. Your wallet is your identity.',
+        description: 'Zero-friction login. Your wallet is your identity across the entire Botchain ecosystem.',
     },
     {
         icon: <Eye size={32} />,
         title: 'Transparent Voting',
-        description: 'Every vote recorded on Botchain. Full audit trail accessible to all.',
+        description: 'Every vote is recorded on Botchain. Full audit trail accessible to all participants.',
     },
     {
         icon: <Shield size={32} />,
         title: 'Sybil Resistance',
-        description: 'One wallet, one vote. Smart contract enforced fairness.',
+        description: 'One wallet, one vote. Smart contract enforced fairness with agent-based verification.',
     },
     {
         icon: <Trophy size={32} />,
-        title: 'Hackathon Ready',
-        description: 'Deploy for any competition in minutes. Configurable judging criteria.',
+        title: 'Event Ready',
+        description: 'Deploy for any competition or community poll in minutes. Fully configurable judging criteria.',
     },
     {
         icon: <Hexagon size={32} />,
-        title: 'Brutalist UI',
-        description: 'Fast scanning. Zero confusion. Built for decision-making.',
+        title: 'Botchain Native',
+        description: 'Leveraging Botchain\'s high throughput and low latency for a seamless voting experience.',
     },
 ];
 
